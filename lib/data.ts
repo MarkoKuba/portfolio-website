@@ -3,17 +3,17 @@ import { Code, Library, Frame } from 'lucide-react';
 export const skills = [
   {
     name: "Languages",
-    description: "HTML, CSS, TailwindCSS, JavaScript, TypeScript, NoSQL, PostgreSQL",
+    description: ["HTML", "CSS, Sass, Tailwind CSS", "JavaScript, TypeScript", "NoSQL, PostgreSQL"],
     icon: Code,
   },
   {
     name: "Libraries",
-    description: "React, Material Design, shadcn/ui, Redux, Tanstack Query",
+    description: ["React", "Bootstrap, Material, shadcn", "Redux Toolkit, Zustand", "Tanstack Query"],
     icon: Library,
   },
   {
     name: "Frameworks",
-    description: "Next.js, Express, Node.js",
+    description: ["Next.js", "Remix / React-Router", "Express, Hono", "Node.js"],
     icon: Frame,
   },
 ];
