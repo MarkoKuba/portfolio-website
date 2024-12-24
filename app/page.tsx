@@ -17,14 +17,14 @@ export default function Home() {
               Hi, I&apos;m <span className="text-primary">Marko Ignjatovic</span>
             </h1>
             <h2 className="text-2xl text-muted-foreground">
-              Full Stack Developer
+              Frontend Developer
             </h2>
           </div>
           
           <p className="text-lg text-muted-foreground max-w-2xl">
-            I aim to craft exceptional digital experiences with modern web technologies.
+            I craft exceptional digital experiences with modern web technologies.
             Specializing in React, Next.js, and Node.js, I build scalable and
-            performant applications that solve real-world problems.
+            performant applications that deliver delightful user experiences.
           </p>
 
           <div className="flex gap-4">

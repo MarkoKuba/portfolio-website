@@ -7,8 +7,8 @@ import { ThemeToggle } from "@/components/theme-toggle";
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Marko Ignjatovic - Full Stack Developer',
-  description: 'Portfolio website showcasing my work as a full stack developer',
+  title: 'Marko Ignjatovic - Frontend Developer',
+  description: 'Portfolio website showcasing my work as a frontenddeveloper',
 };
 
 export default function RootLayout({

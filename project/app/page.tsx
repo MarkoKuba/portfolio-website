@@ -13,10 +13,10 @@ export default function Home() {
         <section className="space-y-8">
           <div className="space-y-4">
             <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-              Hi, I'm <span className="text-primary">Marko Ignjatovic</span>
+              Hi, I&apos;m <span className="text-primary">Marko Ignjatovic</span>
             </h1>
             <h2 className="text-2xl text-muted-foreground">
-              Full Stack Developer
+              Frontend Developer
             </h2>
           </div>
           
