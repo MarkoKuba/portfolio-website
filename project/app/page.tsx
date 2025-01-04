@@ -12,20 +12,14 @@ export default function Home() {
     <main className="min-h-screen bg-background">
       <div className="max-w-4xl mx-auto px-6 py-16">
         <section className="space-y-8">
-          <div className="space-y-4">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-              Hi, I&apos;m <span className="text-primary">Marko Ignjatovic</span>
-            </h1>
-            <h2 className="text-2xl text-muted-foreground">
-              Frontend Developer
-            </h2>
-          </div>
-          
-          <p className="text-lg text-muted-foreground max-w-2xl">
-            I craft exceptional digital experiences with modern web technologies.
-            Specializing in React, Next.js, and Node.js, I build scalable and
-            performant applications that deliver delightful user experiences.
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl text-foreground">
+            Hi, I&apos;m <span className="text-primary">Marko</span>!
+          </h1>
+
+          <p className="text-4xl md:text-5xl xl:text-6xl text-muted-foreground font-bold leading-tight md:leading-snug xl:leading-snug mb-4">
+            I deliver web projects worldwide.
           </p>
+
 
           <div className="flex gap-4">
             <Button asChild>
