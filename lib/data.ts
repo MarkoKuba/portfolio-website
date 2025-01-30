@@ -8,12 +8,12 @@ export const skills = [
   },
   {
     name: "Libraries",
-    description: ["React", "Bootstrap, Material, shadcn", "Redux Toolkit, Zustand", "Tanstack Query"],
+    description: ["React", "Bootstrap, Material, shadcn", "Redux Toolkit", "Tanstack Query"],
     icon: Library,
   },
   {
     name: "Frameworks",
-    description: ["Next.js", "Remix / React-Router", "Express, Hono", "Node.js"],
+    description: ["Next.js", "Remix / React-Router", "Express", "Node.js"],
     icon: Frame,
   },
 ];
@@ -23,7 +23,7 @@ export const projects = [
     title: "Portfolio Website",
     description: "A modern, responsive portfolio website showcasing projects and skills, built with Next.js and Radix-UI.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Radix-UI"],
-    github: "https://github.com/IgnjatMarko/portfolio-website",
+    github: "https://github.com/IgnjatMarko/portfolio-website/tree/main/project",
     demo: "https://markonext.pages.dev"
   },
   {
