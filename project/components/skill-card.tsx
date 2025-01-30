@@ -12,7 +12,7 @@ export function SkillCard({ name, description, icon: Icon }: SkillCardProps) {
     <motion.div
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="p-6 rounded-xl border bg-card hover:bg-accent/10 transition-colors shadow-md hover:shadow-lg cursor-pointer"
+      className="h-full p-6 rounded-xl border bg-card hover:bg-accent/10 transition-colors shadow-md hover:shadow-lg cursor-pointer"
     >
       <div className="flex items-center mb-4">
         <Icon className="w-8 h-8 text-primary mr-3" />

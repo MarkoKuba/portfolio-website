@@ -35,8 +35,10 @@ export default function Home() {
         <section className="mt-24">
           <h3 className="text-2xl font-semibold mb-8">Featured Skills</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {skills.map((skill) => (
-              <SkillCard key={skill.name} {...skill} />
+            {skills.map((skill, index) => (
+              <div key={skill.name} className={index === 2 ? "col-span-2 md:col-span-1" : ""}>
+                <SkillCard key={skill.name} {...skill} />
+              </div>
             ))}
           </div>
         </section>

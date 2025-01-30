@@ -8,12 +8,12 @@ export const skills = [
   },
   {
     name: "Libraries",
-    description: ["React", "Bootstrap, Material, shadcn", "Redux Toolkit, Zustand", "Tanstack Query"],
+    description: ["React", "Bootstrap, Material, shadcn", "Redux Toolkit", "Tanstack Query"],
     icon: Library,
   },
   {
     name: "Frameworks",
-    description: ["Next.js", "Remix / React-Router", "Express, Hono", "Node.js"],
+    description: ["Next.js", "Remix / React-Router", "Express", "Node.js"],
     icon: Frame,
   },
 ];
