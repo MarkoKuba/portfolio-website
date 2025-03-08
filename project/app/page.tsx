@@ -6,6 +6,7 @@ import Link from "next/link";
 import { skills } from "@/lib/data";
 import { SkillCard } from "@/components/skill-card";
 import { ContactDrawer } from "@/components/contact-drawer";
+import DecryptedText from "@/components/decrypted-text";
 
 export default function Home() {
   return (
@@ -13,11 +14,24 @@ export default function Home() {
       <div className="max-w-4xl mx-auto px-6 py-16">
         <section className="space-y-8">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl text-foreground">
-            Hi, I&apos;m <span className="text-primary">Marko</span>!
+            <DecryptedText
+              text="Hi, I&apos;m Marko!"
+              animateOn="view"
+              revealDirection="center"
+              useOriginalCharsOnly={true}
+              className="text-3xl font-bold tracking-tight sm:text-4xl text-foreground"
+            />
           </h1>
 
           <p className="text-4xl md:text-5xl xl:text-6xl text-muted-foreground font-bold leading-tight md:leading-snug xl:leading-snug mb-4">
-            I deliver web projects worldwide.
+            {/* I deliver web projects worldwide. */}
+              <DecryptedText
+                text="I deliver web projects worldwide."
+                animateOn="view"
+                revealDirection="center"
+                useOriginalCharsOnly={true}
+                className="text-4xl md:text-5xl xl:text-6xl text-muted-foreground"
+              />
           </p>
 
 
