@@ -35,14 +35,6 @@ export const skills = [
 
 export const projects = [
   {
-    title: "Online Bible Verse Reader",
-    description:
-      "A user-friendly online platform for reading and searching Bible verses, utilizing real-time data updates.",
-    technologies: ["React", "JavaScript", "Tailwind CSS / DaisyUI", "Firebase"],
-    github: "https://github.com/MarkoKuba/",
-    demo: "https://sacretex.vercel.app/",
-  },
-  {
     title: "React Starter Repo",
     description:
       "A boilerplate for React projects with an interactive roadmap page, Appwrite backend, and typesafe TanStack Router.",
@@ -51,11 +43,19 @@ export const projects = [
     demo: "https://react-starter-repo.vercel.app/",
   },
   {
-    title: "Flowing-Ink - Make Your Mark",
+    title: "Online Bible Verse Reader",
+    description:
+      "A user-friendly online platform for reading and searching Bible verses, utilizing real-time data updates.",
+    technologies: ["React", "JavaScript", "Tailwind CSS / DaisyUI", "Firebase"],
+    github: "https://github.com/MarkoKuba/",
+    demo: "https://sacretex.vercel.app/",
+  },
+  {
+    title: "Flowing Ink - Make Your Mark",
     description: "Watermark and Signature Generator using Text-Stroke webkit.",
     technologies: ["Next.js", "Tailwind CSS", "TypeScript", "v0"],
     github: "https://github.com/MarkoKuba/",
-    demo: "https://flowing-ink.vercel.app/"
+    demo: "https://flowing-ink.vercel.app/",
   },
   {
     title: "E-commerce Retro Store",
@@ -78,8 +78,7 @@ export const projects = [
     description:
       "A modern, responsive portfolio website showcasing projects and skills, built with Next.js and Radix-UI.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Radix-UI"],
-    github:
-      "https://github.com/MarkoKuba/portfolio-website/tree/main/project",
+    github: "https://github.com/MarkoKuba/portfolio-website/tree/main/project",
     demo: "https://markoreact.pages.dev",
   },
 ];
