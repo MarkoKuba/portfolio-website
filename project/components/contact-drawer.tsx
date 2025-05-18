@@ -11,7 +11,8 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer"
-import { Github, Linkedin, Mail } from 'lucide-react'
+import { Github, Coffee, Mail } from 'lucide-react'
+// import { Linkedin } from 'lucide-react'
 
 export function ContactDrawer() {
   return (
@@ -28,21 +29,21 @@ export function ContactDrawer() {
           <div className="p-4 pb-0">
             <div className="flex flex-col gap-4">
               <Button variant="outline" className="flex items-center justify-start gap-2" asChild>
+                <a href="mailto:ignjatovicmarko2023@gmail.com">
+                  <Mail className="w-4 h-4" />
+                  Email
+                </a>
+              </Button>
+              <Button variant="outline" className="flex items-center justify-start gap-2" asChild>
                 <a href="https://github.com/IgnjatMarko" target="_blank" rel="noopener noreferrer">
                   <Github className="w-4 h-4" />
                   GitHub
                 </a>
               </Button>
               <Button variant="outline" className="flex items-center justify-start gap-2" asChild>
-                <a href="https://linkedin.com/in/m-ignjatovic/" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="w-4 h-4" />
-                  LinkedIn
-                </a>
-              </Button>
-              <Button variant="outline" className="flex items-center justify-start gap-2" asChild>
-                <a href="mailto:ignjatovicmarko2023@gmail.com">
-                  <Mail className="w-4 h-4" />
-                  Email
+                <a href="https://ko-fi.com/markokuba" target="_blank" rel="noopener noreferrer">
+                  <Coffee className="w-4 h-4" />
+                  Ko-Fi Tips
                 </a>
               </Button>
             </div>

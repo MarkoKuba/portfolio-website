@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Coffee, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { skills } from "@/lib/data";
@@ -25,13 +25,13 @@ export default function Home() {
 
           <p className="text-4xl md:text-5xl xl:text-6xl text-muted-foreground font-bold leading-tight md:leading-snug xl:leading-snug mb-4">
             {/* I deliver web projects worldwide. */}
-              <DecryptedText
-                text="I deliver web projects worldwide."
-                animateOn="view"
-                revealDirection="center"
-                useOriginalCharsOnly={true}
-                className="text-4xl md:text-5xl xl:text-6xl text-muted-foreground"
-              />
+            <DecryptedText
+              text="I deliver web projects worldwide."
+              animateOn="view"
+              revealDirection="center"
+              useOriginalCharsOnly={true}
+              className="text-4xl md:text-5xl xl:text-6xl text-muted-foreground"
+            />
           </p>
 
 
@@ -61,21 +61,21 @@ export default function Home() {
           <h3 className="text-2xl font-semibold mb-8">Get in Touch</h3>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button variant="outline" className="flex items-center gap-2" asChild>
-              <a href="https://github.com/IgnjatMarko" target="_blank" rel="noopener noreferrer">
+              <a href="mailto:marko@gro-build.com">
+                <Mail className="w-4 h-4" />
+                Email
+              </a>
+            </Button>
+            <Button variant="outline" className="flex items-center gap-2" asChild>
+              <a href="https://github.com/MarkoKuba" target="_blank" rel="noopener noreferrer">
                 <Github className="w-4 h-4" />
                 GitHub
               </a>
             </Button>
             <Button variant="outline" className="flex items-center gap-2" asChild>
-              <a href="https://linkedin.com/in/m-ignjatovic/" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="w-4 h-4" />
-                LinkedIn
-              </a>
-            </Button>
-            <Button variant="outline" className="flex items-center gap-2" asChild>
-              <a href="mailto:ignjatovicmarko2023@gmail.com">
-                <Mail className="w-4 h-4" />
-                Email
+              <a href="https://ko-fi.com/markokuba" target="_blank" rel="noopener noreferrer">
+                <Coffee className="w-4 h-4" />
+                Ko-Fi Tips
               </a>
             </Button>
           </div>
