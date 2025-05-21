@@ -43,7 +43,7 @@ export function ContactDrawer() {
               <Button variant="outline" className="flex items-center justify-start gap-2" asChild>
                 <a href="https://ko-fi.com/markokuba" target="_blank" rel="noopener noreferrer">
                   <Coffee className="w-4 h-4" />
-                  Ko-Fi Tips
+                  Ko-Fi
                 </a>
               </Button>
             </div>
