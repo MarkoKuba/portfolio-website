@@ -3,12 +3,43 @@
 import { Github, Coffee, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { skills } from "@/lib/data";
+import { getIconForSkill } from "@/lib/data";
 import { SkillCard } from "@/components/skill-card";
 import { ContactDrawer } from "@/components/contact-drawer";
 import DecryptedText from "@/components/decrypted-text";
+import { useEffect, useState } from "react";
+
+type Skill = {
+  name: string;
+  description: string[];
+};
 
 export default function Home() {
+  const [skills, setSkills] = useState<Skill[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const loadSkills = async () => {
+      try {
+        const res = await fetch("/api/skills");
+        if (!res.ok) {
+          const errorData = await res.json().catch(() => ({}));
+          throw new Error(errorData.error || "Failed to load skills");
+        }
+        const data: Skill[] = await res.json();
+        setSkills(data);
+      } catch (err) {
+        console.error("Error loading skills:", err);
+        setError(err instanceof Error ? err.message : "Could not load skills.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadSkills();
+  }, []);
+
   return (
     <main className="min-h-screen bg-background">
       <div className="max-w-4xl mx-auto px-6 py-16">
@@ -48,13 +79,31 @@ export default function Home() {
 
         <section className="mt-24">
           <h3 className="text-2xl font-semibold mb-8">Featured Skills</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {skills.map((skill, index) => (
-              <div key={skill.name} className={index === 2 ? "col-span-2 md:col-span-1" : ""}>
-                <SkillCard key={skill.name} {...skill} />
-              </div>
-            ))}
-          </div>
+          {loading && (
+            <p className="text-muted-foreground">Loading skills...</p>
+          )}
+          {error && (
+            <p className="text-red-500">{error}</p>
+          )}
+          {!loading && !error && (
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+              {skills.map((skill, index) => {
+                const Icon = getIconForSkill(skill.name);
+                return (
+                  <div
+                    key={skill.name}
+                    className={index === 2 ? "col-span-2 md:col-span-1" : ""}
+                  >
+                    <SkillCard
+                      name={skill.name}
+                      description={skill.description}
+                      icon={Icon}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </section>
 
         <section id="contact" className="mt-24">

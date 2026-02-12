@@ -33,6 +33,17 @@ export const skills = [
   },
 ];
 
+// Icon mapping for skills fetched from Baserow
+const iconMap: Record<string, typeof Code> = {
+  Languages: Code,
+  Libraries: Library,
+  Frameworks: Frame,
+};
+
+export function getIconForSkill(name: string) {
+  return iconMap[name] ?? Code; // Default to Code icon if not found
+}
+
 export const projects = [
   {
     title: "React Starter Repo",
