@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 // Ensure this route can be used with static HTML export
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 
 const BASEROW_BASE_URL = "https://api.baserow.io/api/database/rows/table";
 
@@ -61,8 +61,7 @@ export async function GET() {
       .filter(
         (row) =>
           row.Name &&
-          row.Name.trim() !== "" &&
-          row.Name.trim() !== "Featured Skills"
+          row.Name.trim() !== ""
       )
       .map((row) => ({
         name: row.Name,
@@ -72,7 +71,12 @@ export async function GET() {
         ),
       }));
 
-    return NextResponse.json(skills);
+    return NextResponse.json(skills, {
+      // Cache for 1 hour, but allow stale data while revalidating
+      headers: {
+        "Cache-Control": "public, max-age=3600, stale-while-revalidate=3600",
+      },
+    });
   } catch (error) {
     console.error("Error fetching from Baserow:", error);
     return NextResponse.json(

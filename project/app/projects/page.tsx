@@ -4,9 +4,42 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
-import { projects } from "@/lib/data";
+import { useEffect, useState } from "react";
+
+type Project = {
+  title: string;
+  description: string;
+  technologies: string[];
+  github: string;
+  demo: string;
+};
 
 export default function Projects() {
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const loadProjects = async () => {
+      try {
+        const res = await fetch("/api/projects");
+        if (!res.ok) {
+          const errorData = await res.json().catch(() => ({}));
+          throw new Error(errorData.error || "Failed to load projects");
+        }
+        const data: Project[] = await res.json();
+        setProjects(data);
+      } catch (err) {
+        console.error("Error loading projects:", err);
+        setError(err instanceof Error ? err.message : "Could not load projects.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadProjects();
+  }, []);
+
   return (
     <main className="min-h-screen bg-background">
       <div className="max-w-4xl mx-auto px-6 py-16">
@@ -22,8 +55,15 @@ export default function Projects() {
           </Button>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          {projects.map((project) => (
+        {loading && (
+          <p className="text-muted-foreground">Loading projects...</p>
+        )}
+        {error && (
+          <p className="text-red-500">{error}</p>
+        )}
+        {!loading && !error && (
+          <div className="grid gap-6 md:grid-cols-2">
+            {projects.map((project) => (
             <Card key={project.title} className="flex flex-col">
               <CardHeader>
                 <CardTitle>{project.title}</CardTitle>
@@ -57,7 +97,8 @@ export default function Projects() {
               </CardFooter>
             </Card>
           ))}
-        </div>
+          </div>
+        )}
       </div>
     </main>
   );
